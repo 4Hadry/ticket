@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.bd {
+  border: 1px solid red;
+}
+.button-shadow {
+  box-shadow: 0px 12px 16px 0px #3f8cff40;
+}
+
+.solid-button:hover {
+  box-shadow: 0px 12px 16px 0px #3f8cff40;
+}
+@keyframes scaleLoop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.scale-animation {
+  animation: scaleLoop 2s ease-in-out infinite;
+}
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-floating-buttons);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+.whatsapp-button-inner {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-floating-buttons);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.whatsapp-button-inner:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animate-scroll-left {
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+.animate-scroll-right {
+  width: max-content;
+  animation: scroll-right 30s linear infinite;
+}
