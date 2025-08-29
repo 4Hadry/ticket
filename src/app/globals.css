@@ -85,39 +85,29 @@ html {
   transform: scale(1.1);
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.animate-scroll {
-  animation: scroll 20s linear infinite;
+.custom-popup .ant-modal-close {
+  top: 28px !important;
+  right: 30px !important;
 }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.custom-popup .ant-modal-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: white; /* ہلکی سی سفید بیگراؤنڈ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+
+/* ✅ Hover effect */
+.custom-popup .ant-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
-.animate-scroll-left {
-  width: max-content;
-  animation: scroll-left 30s linear infinite;
-}
-.animate-scroll-right {
-  width: max-content;
-  animation: scroll-right 30s linear infinite;
+
+/* ✅ اندر کا icon white کر دیا */
+.custom-popup .ant-modal-close-x {
+  font-size: 14px;
+  margin: 0; /* center perfectly */
 }

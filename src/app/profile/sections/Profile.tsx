@@ -1,8 +1,10 @@
-import { Button } from "antd";
-import Image from "next/image";
 import React from "react";
+import Button from "antd/es/button";
+import Title from "antd/es/typography/Title";
+import Paragraph from "antd/es/typography/Paragraph";
+import Image from "next/image";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   return (
     <div className="mx-auto w-full max-w-6xl">
       {/* Cover Photo */}
@@ -26,31 +28,31 @@ const Profile = () => {
             />
           </div>
         </div>
-
-        {/* Subscribe Button */}
       </div>
 
       {/* Profile Info Section */}
       <div className="mt-20 px-8 max-w-6xl flex justify-between">
-        {/* Name */}
+        {/* Name & Bio */}
         <div>
-          <h1 className="text-3xl font-bold mb-2">Reading Rhythms Global</h1>
+          <Title level={2} className="!text-white mb-2">
+            Reading Rhythms Global
+          </Title>
 
-          {/* Description / Bio */}
-          <p className="text-gray-300 max-w-2xl leading-relaxed">
+          <Paragraph className="text-gray-300 max-w-2xl !mb-2">
             Times in GMT+5 — 6:47 PM
-          </p>
-          <p className="text-gray-300 max-w-2xl leading-relaxed">
+          </Paragraph>
+          <Paragraph className="text-gray-300 max-w-2xl">
             Not a book club. A reading party. Read with friends to live music &
             curated playlists!
-          </p>
+          </Paragraph>
         </div>
 
-        <div className="">
+        {/* Subscribe Button */}
+        <div>
           <Button
             type="primary"
             size="large"
-            className="rounded-lg font-medium bg-pink-700 text-white px-6 py-2"
+            className="rounded-lg font-medium px-6 py-2"
           >
             Subscribe
           </Button>
