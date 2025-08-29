@@ -23,9 +23,11 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body className={instrument_sans.className}>
         <Providers>
-          {/* <Header /> */}
-          {children}
-          {/* <Footer /> */}
+          <div className="relative min-h-screen">
+            <Header />
+            <main>{children}</main>
+            {/* <Footer /> */}
+          </div>
         </Providers>
       </body>
     </html>
