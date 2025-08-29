@@ -4,7 +4,7 @@ import Link from "next/link";
 // components/Header.jsx
 export default function Header() {
   return (
-    <header className="flex bg-transparent justify-between items-center px-6 py-4 text-white text-sm">
+     <header className="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 text-white text-sm z-50 bg-transparent">
       {/* Left: Logo / Icon */}
       <Link href={"/"}>
         <div className="font-semibold tracking-wide">luma</div>
