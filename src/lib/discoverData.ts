@@ -81,51 +81,52 @@ export const DISCOVER_CATEGORIES: DiscoverCategory[] = [
   },
 ];
 
-export const EVENTS = [
+export const Events = [
   {
     id: 1,
-    date: "Sep 1",
-    day: "Monday",
-    time: "12:00 AM",
-    endTime: "Aug 31, 2:00 PM CDT",
-    title: "Reading Rhythms Chicago: August 31st",
-    authors: "By Reading Rhythms & Sarah Roth",
-    location: "Oz Park",
-    price: "$10",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop",
+    title: "BSA Monthly not working August 2025",
+    author: "Julien, Bangkok Startup",
+    place: "Redo Mex-Tex Grill & Tap House",
+    price: "TBH 50",
+    time: new Date().toLocaleString(),
+    cover:
+      "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cz/1bb55629-242c-42c1-93cd-df6a2ecc234b.png",
+    avatar: "https://images.lumacdn.com/discovery/bangkok-icon.png",
   },
   {
     id: 2,
-    date: "Sep 7",
-    day: "Sunday",
-    time: "1:00 AM",
-    endTime: "Sep 6, 4:00 PM EDT",
-    title: "National Book Festival Happy Hour with Reading Rhythms DC",
-    authors: "By Reading Rhythms, Ellen Le, Jesse B Rauch & A...",
-    location: "Lost & Found DC",
-    price: null,
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop",
-    isPurple: false,
+    title: "BSA Monthly not working August 2025",
+    author: "Julien, Bangkok Startup",
+    place: "Redo Mex-Tex Grill & Tap House",
+    price: "TBH 50",
+    time: new Date().toLocaleString(),
+    cover:
+      "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cz/1bb55629-242c-42c1-93cd-df6a2ecc234b.png",
+    avatar: "https://images.lumacdn.com/discovery/bangkok-icon.png",
   },
   {
     id: 3,
-    date: "Sep 7",
-    day: "Sunday",
-    time: "8:00 PM",
-    endTime: "11:00 AM EDT",
-    title:
-      "Reading Rhythms x The Toronto Flea Market present: Chapters Under the Tree",
-    authors: "By Reading Rhythms & Devan Hambrock",
-    location: "Ashbridge Estate",
-    price: null,
-    image:
-      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop",
-    isBrown: false,
+    title: "BSA Monthly not working August 2025",
+    author: "Julien, Bangkok Startup",
+    place: "Redo Mex-Tex Grill & Tap House",
+    price: "TBH 50",
+    time: new Date().toLocaleString(),
+    cover:
+      "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cz/1bb55629-242c-42c1-93cd-df6a2ecc234b.png",
+    avatar: "https://images.lumacdn.com/discovery/bangkok-icon.png",
+  },
+  {
+    id: 4,
+    title: "BSA Monthly not working August 2025",
+    author: "Julien, Bangkok Startup",
+    place: "Redo Mex-Tex Grill & Tap House",
+    price: "TBH 50",
+    time: new Date().toLocaleString(),
+    cover:
+      "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/cz/1bb55629-242c-42c1-93cd-df6a2ecc234b.png",
+    avatar: "https://images.lumacdn.com/discovery/bangkok-icon.png",
   },
 ];
-
 // type AntdIconType = React.ComponentType<IconBaseProps>;
 
 // const slugify = (name: string) =>
