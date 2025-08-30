@@ -1,8 +1,10 @@
 "use client";
 import { Button, Typography, Row, Col, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import EventCard from "../../../components/Kit/Cards/EventCard";
+// import EventCard from "../../../components/Kit/Cards/EventCard";
 import SubmitEventActions from "@/components/UI/SubmitEventBtn";
+import EventCard from "@/components/Kit/Cards/EventCards/EventCard";
+import { avatarData } from "@/app/discover/[slug]/components/NearbyEvent";
 
 const { Title, Text } = Typography;
 
@@ -76,7 +78,7 @@ export default function EventList({
                 <Text className="!text-gray-400 !text-xs sm:!text-sm !font-medium">
                   {index === 0
                     ? "Today"
-                    : index === 1
+                    : index === 2
                     ? "Yesterday"
                     : "Earlier"}
                 </Text>
@@ -84,7 +86,15 @@ export default function EventList({
             </Row>
 
             {/* Event Card */}
-            <EventCard event={event} />
+            <EventCard
+              time={event.time}
+              title={event.title}
+              author={event.author}
+              location={event.location}
+              attendees={avatarData}
+              attendeesCount={70}
+              poster="/assets/images/fea3.png"
+            />
           </div>
         ))}
       </div>

@@ -13,6 +13,7 @@ type CustomButtonProps = {
   label?: string;
   onClick?: () => void;
   onlyIcon?: boolean;
+  className?: string;
 };
 
 export default function CustomButton({
@@ -24,23 +25,22 @@ export default function CustomButton({
   label,
   onlyIcon = false,
   onClick,
+  className,
 }: CustomButtonProps) {
-  // 🎨 Colors
-  const mainColor = color === "primary" ? "#FFFFFF" : "#DC2626";
-  const hoverColor = color === "primary" ? "#CACACA" : "#B91C1C";
-
   // 🎨 Size
   const width = size === "large" ? "w-[440px]" : "w-[200px]";
-  const padding = size === "large" ? "py-6 text-base" : "py-5  text-sm";
+  const padding = size === "large" ? "py-6 text-base" : "py-5 text-sm";
 
-  // 🎨 Tailwind classes
+  // 🎨 Base Tailwind classes
   const styles = clsx(
     "inline-flex items-center justify-center font-normal transition-all duration-300 rounded-md",
     width,
     padding,
     {
       // ✅ Contained
-      "text-secondry": variant === "contained" && !disabled,
+      "text-black": variant === "contained" && color === "primary" && !disabled,
+      "text-white":
+        variant === "contained" && color === "secondary" && !disabled,
 
       // ✅ Outlined
       "bg-transparent": variant === "outlined" && !disabled,
@@ -60,23 +60,25 @@ export default function CustomButton({
     }
   );
 
-  // 🎨 Inline styles (AntD override)
+  // 🎨 Inline styles (gradient fix)
   const inlineStyle: React.CSSProperties = {};
 
   if (variant === "contained" && !disabled) {
     inlineStyle.background =
       color === "secondary"
-        ? `linear-gradient(180deg, #DC2626 0%, #B91C1C 100%)`
-        : `linear-gradient(180deg, ${mainColor} 0%, ${hoverColor} 100%)`;
+        ? "linear-gradient(180deg, #DC2626 0%, #B91C1C 100%)"
+        : "linear-gradient(180deg, #FFFFFF 0%, #CACACA 100%)";
 
-    inlineStyle.color = color === "secondary" ? "#FFF" : "#000"; // 🔥 text white for red btn
+    inlineStyle.color = color === "secondary" ? "#FFF" : "#000";
   }
   if (variant === "outlined" && !disabled) {
-    inlineStyle.border = `1px solid ${mainColor}`;
-    inlineStyle.color = mainColor;
+    inlineStyle.border = `1px solid ${
+      color === "secondary" ? "#DC2626" : "#ffff"
+    }`;
+    inlineStyle.color = color === "secondary" ? "#DC2626" : "#fff";
   }
   if (variant === "text" && !disabled) {
-    inlineStyle.color = mainColor;
+    inlineStyle.color = color === "secondary" ? "#DC2626" : "#ffff";
   }
 
   return (
@@ -87,11 +89,14 @@ export default function CustomButton({
         // ✅ Hover effects
         !disabled &&
           variant === "contained" &&
-          "hover:brightness-70 hover:shadow-md hover:scale-[1.02]",
+          "hover:brightness-90 hover:shadow-md hover:scale-[1.02]",
         !disabled &&
           variant === "outlined" &&
           "hover:bg-gray-100 hover:shadow-sm hover:scale-[1.02]",
-        !disabled && variant === "text" && "hover:text-gray-700 hover:underline"
+        !disabled &&
+          variant === "text" &&
+          "hover:text-gray-700 hover:underline",
+        className
       )}
       icon={icon}
       disabled={disabled}

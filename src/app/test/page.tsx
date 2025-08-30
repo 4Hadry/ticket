@@ -10,11 +10,19 @@ import {
   TeamOutlined,
   LockOutlined,
   PlusOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import React, { useState } from "react";
 import Display from "@/components/Kit/Typography/Display";
 import AppText from "@/components/Kit/Typography/Text";
 import CustomButton from "@/components/Kit/Buttons/Buttons";
+import EventCard2 from "@/components/Kit/Cards/EventCards/EventCard2";
+import EventCard3 from "@/components/Kit/Cards/EventCards/EventCard3";
+import StatsCard from "@/components/Kit/Dashboard/StatusCard";
+import AbandonedCard from "@/components/Kit/Dashboard/StatusCard";
+import PageViewsCard from "@/components/Kit/Dashboard/Chart";
+import AnalyticsCard from "@/components/Kit/Dashboard/Chart";
+import UIComponent from "@/components/Kit/Buttons/LoadingBtn";
 
 const page = () => {
   // const [open, setOpen] = useState(false);
@@ -177,6 +185,64 @@ const page = () => {
           size="large"
         />
       </div>
+
+      <EventCard2
+        monthDay="Aug 22"
+        weekday="Friday"
+        time="8:30 PM"
+        city="Multan"
+        guests="No Guest"
+        title="Street Food Festival"
+        imageUrl="/assets/images/cover.png"
+        onManage={() => console.log("Manage clicked")}
+      />
+      <EventCard3
+        day="Tue"
+        date="1"
+        featured
+        start="Jul 19, 2023 @ 8:00 am"
+        end="Aug 4, 2023 @ 5:00 pm"
+        title="Street Food Festival"
+        location="Eventicity Club 8 E 9th Street, Chicago, IL, United States"
+        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."
+        price="$70"
+        image="/assets/images/cover.png"
+      />
+
+      {/* <StatsCard
+        icon={<MailOutlined className="text-white text-lg" />}
+        title="Abandoned card"
+        value={24}
+        percentage={20}
+        duration="In the last 7 days"
+      /> */}
+      <div className="flex justify-center items-center h-screen w-full bg-[#0f1b26]">
+        <StatsCard
+          icon={<MailOutlined className="text-white text-xs" />}
+          title="Abandoned card"
+          value={24}
+          percentage={20}
+          isIncrease={true}
+          duration="In the last 7 days"
+        />
+      </div>
+      {/* <PageViewsCard /> */}
+      <AnalyticsCard />
+
+      <UIComponent
+        type="button"
+        variant="contained"
+        label="Save"
+        state="loading"
+      />
+      <UIComponent type="alert" state="success" label="Operation Successful!" />
+      <UIComponent
+        type="toggle"
+        checked={true}
+        onChange={(v) => console.log(v)}
+      />
+      <UIComponent type="radio" checked={false} label="Option A" />
+      <UIComponent type="checkbox" checked={true} label="Accept Terms" />
     </div>
   );
 };

@@ -3,8 +3,12 @@ import Button from "antd/es/button";
 import Title from "antd/es/typography/Title";
 import Paragraph from "antd/es/typography/Paragraph";
 import Image from "next/image";
+import { Calendar } from "@/lib/discoverData";
 
-const Profile: React.FC = () => {
+type ProfileProps = {
+  data: Calendar;
+};
+const Profile: React.FC<ProfileProps> = ({ data }) => {
   return (
     <div className="mx-auto w-full max-w-6xl">
       {/* Cover Photo */}
@@ -35,15 +39,14 @@ const Profile: React.FC = () => {
         {/* Name & Bio */}
         <div>
           <Title level={2} className="!text-white mb-2">
-            Reading Rhythms Global
+            {data.title}
           </Title>
 
           <Paragraph className="text-gray-300 max-w-2xl !mb-2">
             Times in GMT+5 — 6:47 PM
           </Paragraph>
           <Paragraph className="text-gray-300 max-w-2xl">
-            Not a book club. A reading party. Read with friends to live music &
-            curated playlists!
+            {data.description}
           </Paragraph>
         </div>
 
