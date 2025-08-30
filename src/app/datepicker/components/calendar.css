@@ -1,0 +1,105 @@
+/* Whole calendar container */
+.ant-picker-calendar {
+   transform: scale(0.9);
+ width: 240px !important;  /* fixed width */
+  height: 306px !important; /* fixed height */
+  background: #1D2939 !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* Calendar header (Month, Year, Arrows) */
+.ant-picker-calendar-header {
+   padding: 0 4px !important; /* ⬅ less horizontal padding */
+     margin-bottom: 0 !important; 
+  font-size: 12px !important;
+}
+
+/* Weekday row (Su, Mo, Tu...) */
+.ant-picker-content thead th {
+  background: #1D2939 !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* Each date cell */
+.ant-picker-cell {
+  background: #1D2939 !important;
+  border: none !important;
+}
+
+/* Remove inner border lines inside calendar */
+.ant-picker-content th,
+.ant-picker-content td {
+  border: none !important;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+/* Selected or hovered date styling */
+.ant-picker-cell-inner {
+ font-size: 14px !important;  /* readable */
+  /* padding: 2px 0 !important; */
+  text-align: center;
+  width: 28px; /* adjust to fit 7 columns in 240px */
+  height: 28px;    
+}
+.ant-picker-cell-inner:hover {
+  background: white !important;
+  color: #1D2939 !important;
+}
+
+/* Footer (if shown) */
+.ant-picker-panel {
+
+   transform-origin: top left;
+  background: #1D2939 !important;
+  border: none !important;
+}
+/* Make past days faded */
+.ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell {
+  color: white !important;
+}
+
+.ant-picker-calendar .ant-picker-cell-in-view.ant-picker-cell-disabled {
+  opacity: 0.4 !important;
+  color: #aaa !important; /* faded text */
+}
+
+/* Days from prev/next month */
+.ant-picker-calendar .ant-picker-cell:not(.ant-picker-cell-in-view) {
+  opacity: 0.3 !important;
+  color: #888 !important;
+}
+/* Compact calendar adjustments */
+
+/* Weekday headings smaller */
+.ant-picker-calendar .ant-picker-content thead th {
+  font-size: 12px !important; /* smaller weekday text */
+  padding: 2px !important;    /* less vertical spacing */
+}
+
+/* Day numbers smaller and less padded */
+.ant-picker-calendar .ant-picker-cell-inner {
+  font-size: 12px !important; /* smaller date numbers */
+  padding: 0px !important; 
+   /* reduce space inside date cell */
+}
+
+/* Reduce row height */
+.ant-picker-calendar .ant-picker-content tbody tr {
+  height: 10px !important;    /* compact row */
+}
+
+/* Reduce horizontal spacing between date cells */
+.ant-picker-calendar .ant-picker-content tbody td {
+  padding: 0 !important;
+   height: auto !important;
+}
+
+
